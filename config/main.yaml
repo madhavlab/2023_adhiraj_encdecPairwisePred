@@ -1,0 +1,55 @@
+seed: 10
+
+train:
+  word_alignments_path: "/DATA/datasets/LibriSpeech/LibriSpeech_alignment_word/words_alignment_train-clean-100.pkl" 
+  audio_dir_path: "/DATA/datasets/LibriSpeech/" 
+  
+valid:
+  word_alignments_path: "/DATA/datasets/LibriSpeech/LibriSpeech_alignment_word/words_alignment_test-clean.pkl"
+  audio_dir_path: "/DATA/datasets/LibriSpeech/"
+
+
+
+vq_save_dir: "/path/to/vq"
+
+# input audio 
+seglen: 1.0
+fs: 16000
+feats_type: "melspectrogram" #melspectrogram, spectrogram, raw
+n_mels: 96
+win_size: 0.025
+win_hop: 0.010
+
+# dataloader
+batchsize: 128
+load_workers: 30
+
+
+# mel feature dimension coming from dataloader (must match your extracted mel features)
+mel_dim: 96
+
+# BiLSTM word embedding encoder
+bilstm_hidden: 256
+bilstm_layers: 3
+bilstm_dropout: 0.1
+
+# token decoder (word embedding -> token logits aligned to target length)
+dec_hidden: 256
+dec_layers: 3
+dec_dropout: 0.1
+
+# contrastive temperature 
+temperature: 0.2
+
+# Kmeans quantizer related parameters
+num_codewords: 512
+codeword_dims: 512
+beta: 0.1
+ema_decay: 0.7
+ortho_weight: 0
+
+#training related parameters  
+optimizer: "adam"
+lr: 0.0005
+wt_decay: 0.0001
+lr_scheduler: False
