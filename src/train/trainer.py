@@ -9,9 +9,6 @@ import torchaudio.transforms as T
 import lightning as L
 import transformers
 
-# -------------------------
-# NEW: minimal helper modules
-# -------------------------
 
 class WordBiLSTMEncoder(nn.Module):
     """
