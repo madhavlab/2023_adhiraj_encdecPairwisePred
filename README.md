@@ -33,6 +33,10 @@ git clone https://github.com/madhavlab/2023_adhiraj_encdecPairwisePred
 cd 2023_adhiraj_encdecPairwisePred
 ```
 
+#### Create Environment
+```sh
+uv sync
+```
 
 
 
