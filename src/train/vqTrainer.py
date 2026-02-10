@@ -12,7 +12,6 @@ class VQTrainer(L.LightningModule):
     Train a VectorQuantize codebook on mel representations.
 
     Loss: uses VectorQuantize's returned loss (commitment + codebook EMA updates handled internally).
-    No mel reconstruction is needed for "tokenizer-only" pretraining.
 
     Notes:
     - If your mels dim != codeword_dims, we learn a linear projection into VQ space.
